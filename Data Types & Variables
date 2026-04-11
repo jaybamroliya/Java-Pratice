@@ -1,0 +1,268 @@
+
+---
+
+# 📘 DAY 2: Data Types & Variables (VERY IMPORTANT 🔥)
+
+This topic is asked in **almost every interview**.
+
+---
+
+# 1️⃣ What is a Variable?
+
+👉 A variable is a container to store data.
+
+```java
+int age = 25;
+```
+
+* `int` → data type
+* `age` → variable name
+* `25` → value
+
+---
+
+# 2️⃣ Data Types in Java
+
+## 🔹 Two Types:
+
+### 1. Primitive Data Types
+
+* Store actual value
+* Faster
+* Stored in **stack**
+
+| Type    | Size  | Example |
+| ------- | ----- | ------- |
+| byte    | 1B    | 10      |
+| short   | 2B    | 100     |
+| int     | 4B    | 1000    |
+| long    | 8B    | 10000L  |
+| float   | 4B    | 10.5f   |
+| double  | 8B    | 10.555  |
+| char    | 2B    | 'A'     |
+| boolean | 1 bit | true    |
+
+---
+
+### 2. Non-Primitive Data Types
+
+* Store reference (address)
+* Stored in **heap**
+
+Examples:
+
+* String
+* Arrays
+* Objects
+
+---
+
+# 🧠 Memory Concept (INTERVIEW GOLD)
+
+```java
+int a = 10;
+String name = "Jay";
+```
+
+👉 What happens internally:
+
+* `a` → stored in **stack**
+* `name` → reference in stack, object in **heap**
+
+---
+
+# 3️⃣ Type Casting
+
+## 🔹 1. Implicit (Automatic)
+
+```java
+int a = 10;
+double b = a;  // int → double
+```
+
+---
+
+## 🔹 2. Explicit (Manual)
+
+```java
+double x = 10.5;
+int y = (int) x;  // 10
+```
+
+---
+
+# 🧠 Real-world Example
+
+Think:
+
+* Primitive = actual money in pocket 💰
+* Object = bank account reference 🏦
+
+---
+
+# 4️⃣ Final Keyword (IMPORTANT)
+
+```java
+final int a = 10;
+```
+
+👉 Value cannot be changed
+
+---
+
+# 💻 Practical Code (Everything Combined)
+
+```java
+public class DataTypesDemo {
+    public static void main(String[] args) {
+
+        // Primitive
+        int age = 25;
+        double salary = 50000.75;
+        char grade = 'A';
+        boolean isActive = true;
+
+        // Non-primitive
+        String name = "Jay";
+
+        // Type casting
+        double num = 10.9;
+        int converted = (int) num;
+
+        System.out.println(name);
+        System.out.println(age);
+        System.out.println(converted);
+    }
+}
+```
+
+---
+
+# 🔥 Interview Questions
+
+### 1. Difference between int and Integer?
+
+👉 int = primitive
+👉 Integer = object (wrapper class)
+
+---
+
+### 2. Where are variables stored?
+
+👉 Stack (primitive), Heap (objects)
+
+---
+
+### 3. What is type casting?
+
+👉 Converting one type to another
+
+---
+
+### 4. Why String is non-primitive?
+
+👉 Because it is a class (object)
+
+---
+
+# 🧪 Practice Coding (WITH EXPECTATION)
+
+## Problem 1: Basic Info
+
+👉 Write program:
+
+Output:
+
+```
+Name: Jay
+Age: 25
+Salary: 50000.5
+```
+
+---
+
+## Problem 2: Type Casting
+
+👉 Input:
+
+```java
+double num = 15.8;
+```
+
+Output:
+
+```
+15
+```
+
+---
+
+## Problem 3: Swap Two Numbers
+
+👉 Input:
+
+```
+a = 10
+b = 20
+```
+
+Output:
+
+```
+a = 20
+b = 10
+```
+
+---
+
+## Problem 4: Area of Circle
+
+👉 Input:
+
+```
+radius = 5
+```
+
+Output:
+
+```
+Area = 78.5
+```
+
+---
+
+## Problem 5: Fahrenheit to Celsius
+
+Formula:
+
+```
+C = (F - 32) * 5/9
+```
+
+---
+
+# ⚡ Bonus (INTERVIEW EDGE)
+
+### Wrapper Classes
+
+```java
+Integer num = 10;
+```
+
+👉 Used in:
+
+* Collections
+* Null values
+
+---
+
+# 🚀 Next Topic (DAY 3)
+
+👉 Operators + Control Flow
+(VERY important for coding round)
+
+* if-else
+* switch
+* loops (for, while)
+* real interview logic questions
+
