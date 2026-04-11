@@ -1,1 +1,125 @@
 
+
+
+# 📘 Java Basics (Foundation)
+
+## 1️⃣ What is Java?
+
+Java is:
+
+* **Object-Oriented**
+* **Platform Independent** (Write Once Run Anywhere)
+* Used in backend, Android, enterprise apps
+
+---
+
+## 2️⃣ JDK vs JRE vs JVM (VERY IMPORTANT)
+
+### 🔹 JVM (Java Virtual Machine)
+
+* Runs your Java code
+* Converts `.class` → machine code
+
+👉 Think:
+
+```
+.java → compile → .class → JVM → run
+```
+
+---
+
+### 🔹 JRE (Java Runtime Environment)
+
+* Contains JVM + libraries
+* Used to RUN Java apps
+
+---
+
+### 🔹 JDK (Java Development Kit)
+
+* Contains JRE + tools (compiler `javac`)
+* Used to DEVELOP Java apps
+
+---
+
+## 🔥 Interview Trick Question
+
+👉 Difference between JDK, JRE, JVM?
+
+**Short Answer:**
+
+* JDK = Development
+* JRE = Run
+* JVM = Execute
+
+---
+
+## 3️⃣ First Java Program (Hands-on)
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello Jay!");
+    }
+}
+```
+
+---
+
+## 🔍 Line-by-line Explanation
+
+* `public` → access modifier
+* `class` → class declaration
+* `main()` → entry point of program
+* `System.out.println()` → print output
+
+---
+
+## 🔥 Interview Questions
+
+1. Why is `main` method static?
+   👉 Because JVM calls it without creating object
+
+2. Can we run Java without main?
+   👉 Yes (using static block - tricky answer)
+
+3. Why Java is platform independent?
+   👉 Because of JVM
+
+---
+
+## 4️⃣ Compilation Flow (IMPORTANT)
+
+```
+Main.java → javac → Main.class → JVM → Output
+```
+
+---
+
+## 🧠 Real-world Example
+
+Think Java like:
+
+* You write English (Java code)
+* Compiler translates to bytecode
+* JVM translates to machine language (for any OS)
+
+---
+
+Example:
+
+```java
+public class Practice {
+    public static void main(String[] args) {
+        System.out.println("Name: Jay");
+        System.out.println("Year: 2026");
+
+        int a = 10;
+        int b = 20;
+        System.out.println("Sum: " + (a + b));
+    }
+}
+```
+
+---
+
