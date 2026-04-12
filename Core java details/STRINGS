@@ -1,0 +1,350 @@
+
+# 📘 STRINGS (DETAILED + INTERVIEW LEVEL) 🔥🔥
+
+---
+
+# 🧠 1️⃣ What is String?
+
+## ✅ Definition
+
+A **String** is a sequence of characters.
+
+```java
+String name = "Jay";
+```
+
+---
+
+## 💡 Important Point
+
+👉 In Java, **String is NOT primitive**
+👉 It is a **class (object)**
+
+---
+
+# 🧠 2️⃣ String Immutability (VERY IMPORTANT 🔥🔥)
+
+## ✅ Definition
+
+String is **immutable** → cannot be changed after creation
+
+---
+
+## 🔍 Example
+
+```java
+String s = "Hello";
+s.concat(" World");
+
+System.out.println(s);
+```
+
+👉 Output:
+
+```
+Hello
+```
+
+👉 Because:
+
+* New object created ("Hello World")
+* Old string not changed
+
+---
+
+## 🧠 Memory Concept (INTERVIEW GOLD)
+
+```java
+String s1 = "Java";
+String s2 = "Java";
+```
+
+👉 Both point to **same object** (String Pool)
+
+---
+
+```java
+String s3 = new String("Java");
+```
+
+👉 New object in heap (different)
+
+---
+
+# 🔥 Interview Questions
+
+👉 Why String is immutable?
+
+* Security
+* Performance (String pool)
+* Thread safety
+
+---
+
+# 🧱 3️⃣ String Pool (VERY IMPORTANT)
+
+## ✅ Definition
+
+A special memory area in heap where strings are stored
+
+---
+
+## 💡 Example
+
+```java
+String a = "Hello";
+String b = "Hello";
+```
+
+👉 Only **one object created**
+
+---
+
+# 🔥 Interview Trick
+
+```java
+String a = "Hello";
+String b = new String("Hello");
+
+System.out.println(a == b);       // false
+System.out.println(a.equals(b));  // true
+```
+
+👉 `==` → reference
+👉 `.equals()` → value
+
+---
+
+# 🧰 4️⃣ Important String Methods
+
+---
+
+## 🔹 Length
+
+```java
+String s = "Java";
+System.out.println(s.length()); // 4
+```
+
+---
+
+## 🔹 toUpperCase / toLowerCase
+
+```java
+System.out.println(s.toUpperCase());
+```
+
+---
+
+## 🔹 charAt
+
+```java
+System.out.println(s.charAt(1)); // a
+```
+
+---
+
+## 🔹 substring
+
+```java
+System.out.println(s.substring(1, 3)); // av
+```
+
+---
+
+## 🔹 equals
+
+```java
+s1.equals(s2);
+```
+
+---
+
+## 🔹 contains
+
+```java
+s.contains("Ja"); // true
+```
+
+---
+
+# 🚀 5️⃣ StringBuilder vs StringBuffer (IMPORTANT 🔥)
+
+---
+
+## 🔹 StringBuilder
+
+* Mutable
+* Fast
+* Not thread-safe
+
+---
+
+## 🔹 StringBuffer
+
+* Mutable
+* Thread-safe
+* Slower
+
+---
+
+## 💻 Example
+
+```java
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+
+System.out.println(sb);
+```
+
+---
+
+# 🔥 Interview Question
+
+👉 Difference?
+
+| Feature     | String | StringBuilder | StringBuffer |
+| ----------- | ------ | ------------- | ------------ |
+| Mutable     | ❌      | ✅             | ✅            |
+| Thread-safe | ✅      | ❌             | ✅            |
+| Performance | Slow   | Fast          | Medium       |
+
+---
+
+# 🧪 PRACTICE (WITH ANSWERS)
+
+---
+
+## ✅ 1. Reverse String
+
+```java
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Java";
+        String rev = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+
+        System.out.println(rev);
+    }
+}
+```
+
+---
+
+## ✅ 2. Palindrome String
+
+```java
+public class Palindrome {
+    public static void main(String[] args) {
+        String str = "madam";
+        String rev = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+
+        if (str.equals(rev)) {
+            System.out.println("Palindrome");
+        } else {
+            System.out.println("Not Palindrome");
+        }
+    }
+}
+```
+
+---
+
+## ✅ 3. Count Vowels
+
+```java
+public class Vowels {
+    public static void main(String[] args) {
+        String str = "hello";
+        int count = 0;
+
+        for (char c : str.toCharArray()) {
+            if ("aeiou".contains(String.valueOf(c))) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
+}
+```
+
+---
+
+## ✅ 4. Remove Spaces
+
+```java
+public class RemoveSpaces {
+    public static void main(String[] args) {
+        String str = "Hello World";
+        String result = str.replace(" ", "");
+
+        System.out.println(result);
+    }
+}
+```
+
+---
+
+## ✅ 5. Count Characters
+
+```java
+public class CountChar {
+    public static void main(String[] args) {
+        String str = "Java";
+
+        for (char c : str.toCharArray()) {
+            System.out.println(c);
+        }
+    }
+}
+```
+
+---
+
+# 🎯 MOST ASKED INTERVIEW QUESTIONS
+
+---
+
+### 1. Why String is immutable?
+
+👉 Security + performance + caching
+
+---
+
+### 2. Difference: == vs equals?
+
+👉 `==` → reference
+👉 `equals()` → value
+
+---
+
+### 3. String vs StringBuilder?
+
+👉 Mutable vs immutable
+
+---
+
+### 4. What is String Pool?
+
+👉 Memory optimization area
+
+---
+
+### 5. How many objects created?
+
+```java
+String s1 = "Java";
+String s2 = "Java";
+```
+
+👉 Only 1 object
+
+---
