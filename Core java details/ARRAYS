@@ -1,0 +1,312 @@
+---
+
+# 📘 ARRAYS (DETAILED + INTERVIEW LEVEL) 🔥🔥
+
+👉 Arrays are used in:
+
+* Coding rounds
+* Problem solving
+* Real backend logic
+
+---
+
+# 🧠 1️⃣ What is an Array?
+
+## ✅ Definition
+
+An **array** is a collection of elements of the **same data type**, stored in **contiguous memory locations**.
+
+---
+
+## 💡 Key Points
+
+* Fixed size
+* Same type only
+* Indexed (starts from 0)
+
+---
+
+## 💻 Example
+
+```java
+int[] arr = {10, 20, 30, 40};
+```
+
+👉 Memory:
+
+```
+Index:  0   1   2   3
+Value: 10  20  30  40
+```
+
+---
+
+# 🧠 2️⃣ Array Declaration & Initialization
+
+---
+
+## 🔹 Method 1
+
+```java
+int[] arr = new int[5];
+```
+
+---
+
+## 🔹 Method 2
+
+```java
+int[] arr = {1, 2, 3};
+```
+
+---
+
+# 🧠 3️⃣ Access & Loop
+
+```java
+for (int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+```
+
+---
+
+## 🔹 Enhanced for loop
+
+```java
+for (int num : arr) {
+    System.out.println(num);
+}
+```
+
+---
+
+# 🧠 4️⃣ Types of Arrays
+
+---
+
+## 🔹 1. Single Dimensional
+
+```java
+int[] arr = {1,2,3};
+```
+
+---
+
+## 🔹 2. Multi-Dimensional (2D Array)
+
+```java
+int[][] matrix = {
+    {1,2},
+    {3,4}
+};
+```
+
+---
+
+## 💻 Access 2D
+
+```java
+System.out.println(matrix[0][1]); // 2
+```
+
+---
+
+# 🧠 5️⃣ Memory Concept (INTERVIEW)
+
+```java
+int[] arr = new int[3];
+```
+
+👉 `arr` → reference (stack)
+👉 array → heap memory
+
+---
+
+# 🔥 Interview Question
+
+👉 Why array size fixed?
+
+* Memory allocated at compile/runtime fixed block
+
+---
+
+# 🧪 PRACTICE (WITH ANSWERS — INTERVIEW LEVEL)
+
+---
+
+## ✅ 1. Find Largest Element
+
+```java
+public class Largest {
+    public static void main(String[] args) {
+        int[] arr = {10, 50, 20, 80, 30};
+        int max = arr[0];
+
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        System.out.println(max);
+    }
+}
+```
+
+---
+
+## ✅ 2. Reverse Array
+
+```java
+public class ReverseArray {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5};
+
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+```
+
+---
+
+## ✅ 3. Sum of Array
+
+```java
+public class SumArray {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4};
+
+        int sum = 0;
+        for (int num : arr) {
+            sum += num;
+        }
+
+        System.out.println(sum);
+    }
+}
+```
+
+---
+
+## ✅ 4. Count Even & Odd
+
+```java
+public class EvenOddCount {
+    public static void main(String[] args) {
+        int[] arr = {1,2,3,4,5,6};
+
+        int even = 0, odd = 0;
+
+        for (int num : arr) {
+            if (num % 2 == 0) even++;
+            else odd++;
+        }
+
+        System.out.println("Even: " + even);
+        System.out.println("Odd: " + odd);
+    }
+}
+```
+
+---
+
+## ✅ 5. Linear Search (IMPORTANT 🔥)
+
+```java
+public class LinearSearch {
+    public static void main(String[] args) {
+        int[] arr = {10,20,30,40};
+        int key = 30;
+        boolean found = false;
+
+        for (int num : arr) {
+            if (num == key) {
+                found = true;
+                break;
+            }
+        }
+
+        System.out.println(found ? "Found" : "Not Found");
+    }
+}
+```
+
+---
+
+## ✅ 6. 2D Matrix Print
+
+```java
+public class MatrixPrint {
+    public static void main(String[] args) {
+        int[][] mat = {
+            {1,2,3},
+            {4,5,6}
+        };
+
+        for (int i = 0; i < mat.length; i++) {
+            for (int j = 0; j < mat[i].length; j++) {
+                System.out.print(mat[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+```
+
+---
+
+# 🔥 ADVANCED INTERVIEW QUESTIONS
+
+---
+
+### 1. Difference: Array vs ArrayList?
+
+👉 Array = fixed
+👉 ArrayList = dynamic
+
+---
+
+### 2. Default values in array?
+
+| Type    | Default |
+| ------- | ------- |
+| int     | 0       |
+| boolean | false   |
+| String  | null    |
+
+---
+
+### 3. Can array size change?
+
+👉 ❌ No
+
+---
+
+### 4. Where array stored?
+
+👉 Heap memory
+
+---
+
+# 🧠 Real-world Use
+
+* Store API responses
+* Store users list
+* Backend processing
+
+---
+---
+
+# ⚡ Pro Interview Tip
+
+👉 Always say:
+
+* Arrays use **contiguous memory**
+* Fast access using index O(1)
+
+👉 This shows strong knowledge 💯
+
+---
