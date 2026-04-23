@@ -1,0 +1,395 @@
+
+# 📘 COLLECTIONS FRAMEWORK 
+
+---
+
+# 🧠 1️⃣ What is Collections Framework?
+
+## ✅ Definition
+
+The **Collections Framework** is a set of classes and interfaces used to **store, manipulate, and manage groups of objects dynamically**.
+
+---
+
+## 🎯 Why Collections?
+
+👉 Problem with arrays:
+
+* Fixed size ❌
+* No built-in methods ❌
+
+👉 Collections solve:
+
+* Dynamic size ✅
+* Ready-made methods ✅
+* Better performance handling ✅
+
+---
+
+# 🧱 2️⃣ Collection Hierarchy (IMPORTANT)
+
+```
+Collection (interface)
+   |
+   |---- List
+   |       |---- ArrayList
+   |       |---- LinkedList
+   |
+   |---- Set
+   |       |---- HashSet
+   |       |---- TreeSet
+   |
+   |---- Queue
+           |---- PriorityQueue
+```
+
+👉 Map is separate (not part of Collection)
+
+---
+
+# 🧾 3️⃣ LIST (ORDERED + DUPLICATES ALLOWED)
+
+---
+
+## 🔹 ArrayList (MOST USED 🔥)
+
+### ✅ Features
+
+* Dynamic array
+* Allows duplicates
+* Maintains order
+
+---
+
+## 💻 Code
+
+```java
+import java.util.*;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("Java");
+        list.add("Python");
+        list.add("Java");
+
+        System.out.println(list);
+    }
+}
+```
+
+---
+
+## 🔥 Interview Points
+
+👉 Internal:
+
+* Uses **dynamic array**
+* Default size = 10
+* Resize = 50% increase
+
+---
+
+---
+
+## 🔹 LinkedList
+
+### ✅ Features
+
+* Doubly linked list
+* Fast insertion/deletion
+
+---
+
+## 💻 Code
+
+```java
+LinkedList<Integer> list = new LinkedList<>();
+list.add(10);
+list.add(20);
+```
+
+---
+
+## 🔥 Interview Difference
+
+| Feature | ArrayList | LinkedList |
+| ------- | --------- | ---------- |
+| Access  | Fast      | Slow       |
+| Insert  | Slow      | Fast       |
+
+---
+
+# 🧾 4️⃣ SET (NO DUPLICATES)
+
+---
+
+## 🔹 HashSet
+
+### ✅ Features
+
+* No duplicates
+* No order
+
+---
+
+## 💻 Code
+
+```java
+HashSet<Integer> set = new HashSet<>();
+
+set.add(10);
+set.add(20);
+set.add(10);
+
+System.out.println(set); // duplicate removed
+```
+
+---
+
+## 🔥 Interview Points
+
+👉 Uses:
+
+* Hashing
+* O(1) operations
+
+---
+
+---
+
+## 🔹 TreeSet
+
+### ✅ Features
+
+* Sorted
+* No duplicates
+
+---
+
+## 💻 Code
+
+```java
+TreeSet<Integer> set = new TreeSet<>();
+set.add(30);
+set.add(10);
+set.add(20);
+
+System.out.println(set); // sorted
+```
+
+---
+
+# 🧾 5️⃣ MAP (KEY-VALUE) 🔥🔥
+
+---
+
+## 🔹 HashMap (MOST IMPORTANT 🔥🔥🔥)
+
+### ✅ Features
+
+* Key-value pairs
+* Unique keys
+* Fast (O(1))
+
+---
+
+## 💻 Code
+
+```java
+import java.util.*;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Jay");
+        map.put(2, "Ram");
+
+        System.out.println(map.get(1));
+    }
+}
+```
+
+---
+
+## 🔥 Internal Working (INTERVIEW GOLD)
+
+👉 Uses:
+
+* Hashing
+* Bucket array
+* Linked list / tree (Java 8+)
+
+---
+
+# 🧠 HashMap Flow
+
+```
+Key → hashCode() → index → store value
+```
+
+---
+
+# 🔥 Interview Questions
+
+---
+
+### 1. Difference: List vs Set?
+
+👉 List = duplicates allowed
+👉 Set = no duplicates
+
+---
+
+### 2. Difference: HashMap vs HashSet?
+
+👉 HashSet = only values
+👉 HashMap = key-value
+
+---
+
+### 3. Why HashMap fast?
+
+👉 Hashing (O(1))
+
+---
+
+### 4. Can HashMap have null?
+
+👉 Yes (1 null key allowed)
+
+---
+
+---
+
+# 🧪 PRACTICE (WITH ANSWERS — INTERVIEW LEVEL)
+
+---
+
+## ✅ 1. ArrayList Loop
+
+```java
+import java.util.*;
+
+public class ListLoop {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        list.add(10);
+        list.add(20);
+        list.add(30);
+
+        for (int num : list) {
+            System.out.println(num);
+        }
+    }
+}
+```
+
+---
+
+## ✅ 2. Remove Duplicates using Set
+
+```java
+import java.util.*;
+
+public class RemoveDuplicates {
+    public static void main(String[] args) {
+        int[] arr = {1,2,2,3,4,4};
+
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int num : arr) {
+            set.add(num);
+        }
+
+        System.out.println(set);
+    }
+}
+```
+
+---
+
+## ✅ 3. Count Frequency (IMPORTANT 🔥)
+
+```java
+import java.util.*;
+
+public class Frequency {
+    public static void main(String[] args) {
+        int[] arr = {1,2,2,3,3,3};
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        System.out.println(map);
+    }
+}
+```
+
+---
+
+## ✅ 4. Find Max using List
+
+```java
+import java.util.*;
+
+public class MaxList {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+
+        list.add(10);
+        list.add(50);
+        list.add(20);
+
+        int max = Collections.max(list);
+
+        System.out.println(max);
+    }
+}
+```
+
+---
+
+## ✅ 5. Iterate HashMap
+
+```java
+import java.util.*;
+
+public class MapLoop {
+    public static void main(String[] args) {
+        HashMap<Integer, String> map = new HashMap<>();
+
+        map.put(1, "Jay");
+        map.put(2, "Ram");
+
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+}
+```
+
+---
+
+# 🎯 MUST-KNOW INTERVIEW QUESTIONS
+
+---
+
+👉 What is Collections Framework?
+👉 Difference: ArrayList vs LinkedList
+👉 How HashMap works internally? 🔥
+👉 Difference: HashSet vs TreeSet
+👉 Fail-fast vs fail-safe
+
+---
+
+# ⚡ Pro Interview Answer (IMPORTANT)
+
+👉 “HashMap uses hashing. Key’s hashCode decides bucket. In Java 8, collisions handled using LinkedList + Tree structure.”
+
