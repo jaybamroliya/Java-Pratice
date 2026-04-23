@@ -1,0 +1,398 @@
+
+We’ll cover:
+
+* Java 8 (Lambda + Streams) 🔥🔥
+* File Handling
+* Memory Management (Heap, Stack, GC)
+* Full Interview Q&A
+
+---
+
+# 📘 FINAL CORE JAVA (MASTER LEVEL) 🔥🔥🔥
+
+---
+
+# 🧠 1️⃣ JAVA 8 FEATURES (VERY IMPORTANT 🔥🔥)
+
+---
+
+# 🔹 Lambda Expression
+
+## ✅ Definition
+
+A **lambda expression** is a short way to write **anonymous functions**
+
+---
+
+## 💻 Syntax
+
+```java
+(parameters) -> expression
+```
+
+---
+
+## 💻 Example
+
+```java
+interface Test {
+    void show();
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Test t = () -> System.out.println("Hello Lambda");
+
+        t.show();
+    }
+}
+```
+
+---
+
+## 🎯 Why Lambda?
+
+* Less code
+* Functional programming
+* Used in streams
+
+---
+
+# 🔥 Interview Q&A
+
+👉 What is lambda?
+→ Anonymous function
+
+👉 Why use?
+→ Reduce boilerplate code
+
+---
+
+---
+
+# 🧠 2️⃣ FUNCTIONAL INTERFACE
+
+---
+
+## ✅ Definition
+
+Interface with **only one abstract method**
+
+---
+
+## 💻 Example
+
+```java
+@FunctionalInterface
+interface MyInterface {
+    void run();
+}
+```
+
+---
+
+## 🔥 Examples
+
+* Runnable
+* Comparator
+
+---
+
+---
+
+# 🧠 3️⃣ STREAM API (VERY IMPORTANT 🔥🔥🔥)
+
+---
+
+## ✅ Definition
+
+Stream API is used to **process collections of data in functional style**
+
+---
+
+## 💻 Example
+
+```java
+import java.util.*;
+
+public class StreamDemo {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(1,2,3,4,5);
+
+        list.stream()
+            .filter(n -> n % 2 == 0)
+            .forEach(System.out::println);
+    }
+}
+```
+
+---
+
+## 🧠 Flow
+
+```text
+Collection → Stream → Filter → Process → Output
+```
+
+---
+
+## 🔹 Common Methods
+
+* filter()
+* map()
+* forEach()
+* collect()
+
+---
+
+## 💻 Example
+
+```java
+list.stream()
+    .map(n -> n * 2)
+    .forEach(System.out::println);
+```
+
+---
+
+# 🔥 Interview Q&A
+
+👉 Difference: Collection vs Stream
+→ Collection stores data, Stream processes data
+
+---
+
+👉 What is lazy evaluation?
+→ Executes only when needed
+
+---
+
+---
+
+# 🧠 4️⃣ FILE HANDLING
+
+---
+
+## ✅ Definition
+
+Reading and writing data to files
+
+---
+
+## 💻 Write File
+
+```java
+import java.io.*;
+
+public class WriteFile {
+    public static void main(String[] args) throws Exception {
+        FileWriter fw = new FileWriter("test.txt");
+        fw.write("Hello Java");
+        fw.close();
+    }
+}
+```
+
+---
+
+## 💻 Read File
+
+```java
+import java.io.*;
+
+public class ReadFile {
+    public static void main(String[] args) throws Exception {
+        FileReader fr = new FileReader("test.txt");
+        int i;
+
+        while ((i = fr.read()) != -1) {
+            System.out.print((char) i);
+        }
+
+        fr.close();
+    }
+}
+```
+
+---
+
+# 🔥 Interview Q&A
+
+👉 What is File class?
+→ Represents file path
+
+---
+
+👉 Difference: FileWriter vs BufferedWriter
+→ Buffered is faster
+
+---
+
+---
+
+# 🧠 5️⃣ MEMORY MANAGEMENT (VERY IMPORTANT 🔥🔥🔥)
+
+---
+
+# 🔹 Stack vs Heap
+
+| Stack            | Heap            |
+| ---------------- | --------------- |
+| Stores variables | Stores objects  |
+| Fast             | Slower          |
+| Thread-safe      | Not thread-safe |
+
+---
+
+## 💻 Example
+
+```java
+int a = 10;         // stack
+String s = "Java";  // heap
+```
+
+---
+
+---
+
+# 🧠 6️⃣ GARBAGE COLLECTION (GC)
+
+---
+
+## ✅ Definition
+
+Automatic memory cleanup
+
+---
+
+## 💻 Example
+
+```java
+String s = new String("Java");
+s = null; // eligible for GC
+```
+
+---
+
+---
+
+# 🔥 Interview Q&A
+
+👉 What is GC?
+→ Automatic memory cleanup
+
+---
+
+👉 Can we force GC?
+→ No (System.gc() is request only)
+
+---
+
+---
+
+# 🧪 FINAL PRACTICE (WITH ANSWERS 🔥)
+
+---
+
+## ✅ 1. Even Numbers using Stream
+
+```java
+import java.util.*;
+
+public class EvenStream {
+    public static void main(String[] args) {
+        List<Integer> list = Arrays.asList(1,2,3,4,5,6);
+
+        list.stream()
+            .filter(n -> n % 2 == 0)
+            .forEach(System.out::println);
+    }
+}
+```
+
+---
+
+## ✅ 2. Square Numbers
+
+```java
+list.stream()
+    .map(n -> n * n)
+    .forEach(System.out::println);
+```
+
+---
+
+---
+
+## ✅ 3. File Write & Read Combined
+
+```java
+import java.io.*;
+
+public class FileDemo {
+    public static void main(String[] args) throws Exception {
+
+        FileWriter fw = new FileWriter("file.txt");
+        fw.write("Hello");
+        fw.close();
+
+        FileReader fr = new FileReader("file.txt");
+        int i;
+
+        while ((i = fr.read()) != -1) {
+            System.out.print((char) i);
+        }
+
+        fr.close();
+    }
+}
+```
+
+---
+
+# 🎯 FINAL MUST-KNOW INTERVIEW QUESTIONS 🔥🔥🔥
+
+---
+
+## 🔥 JAVA 8
+
+👉 What is lambda?
+👉 What is functional interface?
+👉 What is Stream API?
+👉 Difference: map vs filter
+
+---
+
+## 🔥 MEMORY
+
+👉 Stack vs Heap
+👉 What is GC
+👉 How memory works
+
+---
+
+## 🔥 FILE
+
+👉 File handling classes
+👉 Buffered vs normal
+
+---
+
+---
+
+# ⚡ FINAL PRO INTERVIEW ANSWERS
+
+---
+
+👉 “Lambda provides functional programming support in Java.”
+
+👉 “Streams process data in declarative way.”
+
+👉 “Heap stores objects, stack stores local variables.”
+
+👉 “Garbage Collector automatically removes unused objects.”
+
+---
+
+---
