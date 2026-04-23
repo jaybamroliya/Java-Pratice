@@ -1,0 +1,344 @@
+---
+
+# 📘 EXCEPTION HANDLING
+
+---
+
+# 🧠 1️⃣ What is Exception?
+
+## ✅ Definition
+
+An **exception** is an event that **disrupts the normal flow of a program** during execution.
+
+---
+
+## 💡 Example
+
+```java
+int a = 10 / 0; // ArithmeticException
+```
+
+👉 Program crashes ❌
+
+---
+
+# 🎯 Why Exception Handling?
+
+Without it:
+
+* Program crashes ❌
+
+With it:
+
+* Graceful handling ✅
+* Better user experience ✅
+* Stable applications ✅
+
+---
+
+# 🧱 2️⃣ Exception Hierarchy (IMPORTANT)
+
+```text id="fq16zf"
+Object
+   |
+   |---- Throwable
+           |
+           |---- Exception (Checked)
+           |---- RuntimeException (Unchecked)
+```
+
+---
+
+# 🧠 3️⃣ Types of Exceptions (VERY IMPORTANT 🔥)
+
+---
+
+## 🔹 1. Checked Exception
+
+👉 Checked at compile-time
+
+### Examples:
+
+* IOException
+* SQLException
+
+---
+
+## 🔹 2. Unchecked Exception
+
+👉 Runtime errors
+
+### Examples:
+
+* ArithmeticException
+* NullPointerException
+* ArrayIndexOutOfBoundsException
+
+---
+
+# 🔥 Interview Difference
+
+| Feature  | Checked   | Unchecked |
+| -------- | --------- | --------- |
+| Time     | Compile   | Runtime   |
+| Handling | Mandatory | Optional  |
+
+---
+
+# 🧰 4️⃣ try-catch (BASIC)
+
+---
+
+## 💻 Code
+
+```java id="5d0ww2"
+public class TryCatchDemo {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Error occurred");
+        }
+    }
+}
+```
+
+---
+
+# 🧠 Flow
+
+```text id="zcc5a1"
+try → exception → catch → handled
+```
+
+---
+
+# 🧰 5️⃣ finally (IMPORTANT)
+
+👉 Always executes (cleanup code)
+
+---
+
+```java id="36hqyj"
+try {
+    int a = 10 / 0;
+} catch (Exception e) {
+    System.out.println("Error");
+} finally {
+    System.out.println("Always runs");
+}
+```
+
+---
+
+# 🧰 6️⃣ throw vs throws (INTERVIEW FAVORITE 🔥)
+
+---
+
+## 🔹 throw
+
+👉 Used to **manually throw exception**
+
+```java id="bn1n0i"
+throw new ArithmeticException("Error");
+```
+
+---
+
+## 🔹 throws
+
+👉 Declares exception
+
+```java id="gdd8f6"
+void test() throws IOException {
+}
+```
+
+---
+
+## 🔥 Difference
+
+| Feature | throw         | throws           |
+| ------- | ------------- | ---------------- |
+| Use     | Inside method | Method signature |
+| Purpose | Throw         | Declare          |
+
+---
+
+# 🧰 7️⃣ Custom Exception (ADVANCED 🔥)
+
+---
+
+## 💻 Code
+
+```java id="cf21e7"
+class MyException extends Exception {
+    public MyException(String msg) {
+        super(msg);
+    }
+}
+
+public class Test {
+    public static void main(String[] args) throws MyException {
+        int age = 15;
+
+        if (age < 18) {
+            throw new MyException("Not eligible");
+        }
+    }
+}
+```
+
+---
+
+# 🧠 8️⃣ Multiple catch
+
+```java id="vj9m2u"
+try {
+    int[] arr = new int[2];
+    System.out.println(arr[5]);
+} catch (ArithmeticException e) {
+    System.out.println("Arithmetic");
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Index error");
+}
+```
+
+---
+
+# 🧠 9️⃣ Nested try
+
+```java id="edgqeo"
+try {
+    try {
+        int a = 10 / 0;
+    } catch (ArithmeticException e) {
+        System.out.println("Inner");
+    }
+} catch (Exception e) {
+    System.out.println("Outer");
+}
+```
+
+---
+
+# 🧪 PRACTICE (WITH ANSWERS 🔥)
+
+---
+
+## ✅ 1. Handle Divide by Zero
+
+```java id="7e6g0s"
+public class Divide {
+    public static void main(String[] args) {
+        try {
+            int a = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+    }
+}
+```
+
+---
+
+## ✅ 2. NullPointerException
+
+```java id="r81gbo"
+public class NullDemo {
+    public static void main(String[] args) {
+        try {
+            String s = null;
+            System.out.println(s.length());
+        } catch (NullPointerException e) {
+            System.out.println("Null error");
+        }
+    }
+}
+```
+
+---
+
+## ✅ 3. Array Exception
+
+```java id="2slc6z"
+public class ArrayError {
+    public static void main(String[] args) {
+        try {
+            int[] arr = {1,2};
+            System.out.println(arr[5]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Index error");
+        }
+    }
+}
+```
+
+---
+
+## ✅ 4. Custom Exception
+
+```java id="6cb4rk"
+class InvalidAge extends Exception {
+    InvalidAge(String msg) {
+        super(msg);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) throws InvalidAge {
+        int age = 16;
+
+        if (age < 18) {
+            throw new InvalidAge("Not eligible");
+        }
+    }
+}
+```
+
+---
+
+# 🎯 MUST-KNOW INTERVIEW QUESTIONS (🔥🔥🔥)
+
+---
+
+## 🔥 CORE
+
+👉 What is exception?
+👉 Difference: Error vs Exception
+👉 Checked vs Unchecked
+
+---
+
+## 🔥 KEY QUESTIONS
+
+👉 Difference: throw vs throws
+👉 What is finally block?
+👉 Can finally not execute? (Yes: System.exit())
+
+---
+
+## 🔥 ADVANCED
+
+👉 What is custom exception?
+👉 What is stack trace?
+👉 What is exception propagation?
+
+---
+
+## 🔥 TRICK QUESTIONS
+
+👉 Can we have try without catch? → Yes (with finally)
+👉 Can we have multiple catch? → Yes
+👉 Can we catch multiple exceptions in one block? → Yes (Java 7+)
+
+---
+
+# ⚡ PRO INTERVIEW ANSWERS
+
+👉 “Checked exceptions are compile-time, unchecked are runtime.”
+
+👉 “finally block is used for cleanup and always executes.”
+
+👉 “throw is used to explicitly throw exception, throws is used to declare.”
+
